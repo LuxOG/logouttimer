@@ -69,6 +69,6 @@ class ElapsedTimer extends InfoBox
 	public String getTooltip()
 	{
 		Duration time = Duration.between(startTime, lastTime == null ? Instant.now() : lastTime);
-		return "Elapsed time: " +  DurationFormatUtils.formatDuration(time.toMillis(), "HH:mm:ss", true);
+		return "Elapsed time: " + DurationFormatUtils.formatDuration(time.toMillis(), "HH:mm:ss", true);
 	}
 }
