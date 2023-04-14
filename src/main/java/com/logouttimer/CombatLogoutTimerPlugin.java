@@ -19,7 +19,7 @@ import net.runelite.client.ui.overlay.infobox.InfoBoxManager;
 @PluginDescriptor(
 	name = "LogoutTimer"
 )
-public class LogoutTimerPlugin extends Plugin
+public class CombatLogoutTimerPlugin extends Plugin
 {
 
 	@Inject
@@ -32,7 +32,7 @@ public class LogoutTimerPlugin extends Plugin
 	private Client client;
 
 	@Inject
-	private LogoutTimerConfig config;
+	private CombatLogoutTimerConfig config;
 
 	@Inject
 	private InfoBoxManager infoBoxManager;
@@ -45,9 +45,9 @@ public class LogoutTimerPlugin extends Plugin
 	}
 
 	@Provides
-	LogoutTimerConfig provideConfig(ConfigManager configManager)
+	CombatLogoutTimerConfig provideConfig(ConfigManager configManager)
 	{
-		return configManager.getConfig(LogoutTimerConfig.class);
+		return configManager.getConfig(CombatLogoutTimerConfig.class);
 	}
 
 	@Subscribe

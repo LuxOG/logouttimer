@@ -39,7 +39,7 @@ class ElapsedTimer extends InfoBox
 	private final Instant lastTime;
 
 	// Creates a timer that counts up if lastTime is null, or a paused timer if lastTime is defined
-	ElapsedTimer(BufferedImage image, LogoutTimerPlugin plugin, Instant startTime, Instant lastTime)
+	ElapsedTimer(BufferedImage image, CombatLogoutTimerPlugin plugin, Instant startTime, Instant lastTime)
 	{
 		super(image, plugin);
 		this.startTime = startTime;
