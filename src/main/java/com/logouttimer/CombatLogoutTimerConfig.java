@@ -4,15 +4,15 @@ import net.runelite.client.config.Config;
 import net.runelite.client.config.ConfigGroup;
 import net.runelite.client.config.ConfigItem;
 
-@ConfigGroup(LogoutTimerConfig.GROUP)
-public interface LogoutTimerConfig extends Config
+@ConfigGroup(CombatLogoutTimerConfig.GROUP)
+public interface CombatLogoutTimerConfig extends Config
 {
-	String GROUP = "logouttimer";
+	String GROUP = "combatlogouttimer";
 
 
 	@ConfigItem(
 		keyName = "showCombatTimer",
-		name = "Combat cooldown timer",
+		name = "Combat logout timer",
 		description = "Configures the display for the 10 second timer that prevents logout upon being hit in combat"
 	)
 	default boolean showCombatTimer()

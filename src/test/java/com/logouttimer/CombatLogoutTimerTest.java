@@ -3,11 +3,11 @@ package com.logouttimer;
 import net.runelite.client.RuneLite;
 import net.runelite.client.externalplugins.ExternalPluginManager;
 
-public class LogoutTimerTest
+public class CombatLogoutTimerTest
 {
 	public static void main(String[] args) throws Exception
 	{
-		ExternalPluginManager.loadBuiltin(LogoutTimerPlugin.class);
+		ExternalPluginManager.loadBuiltin(CombatLogoutTimerPlugin.class);
 		RuneLite.main(args);
 	}
 }
