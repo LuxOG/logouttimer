@@ -6,6 +6,7 @@ import java.time.Duration;
 import javax.inject.Inject;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.Client;
+import net.runelite.api.Varbits;
 import net.runelite.api.events.HitsplatApplied;
 import net.runelite.client.config.ConfigManager;
 import net.runelite.client.eventbus.Subscribe;
@@ -59,7 +60,16 @@ public class CombatLogoutTimerPlugin extends Plugin
 		}
 		if (config.showCombatTimer())
 		{
-			createGameTimer(COMBAT_TIMER);
+			boolean inWilderness = client.getVarbitValue(Varbits.IN_WILDERNESS) == 1;
+			boolean inPvp = client.getVarbitValue(Varbits.PVP_SPEC_ORB) == 1;
+			if (!inWilderness && !inPvp && config.disableOutsidePvP())
+			{
+				//Do nothing
+			}
+			else
+			{
+				createGameTimer(COMBAT_TIMER);
+			}
 		}
 	}
 
