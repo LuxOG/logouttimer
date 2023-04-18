@@ -19,4 +19,15 @@ public interface CombatLogoutTimerConfig extends Config
 	{
 		return true;
 	}
+
+	@ConfigItem(
+		position = 16,
+		keyName = "disableOutsidePvP",
+		name = "Disable outside PvP",
+		description = "Disable the overlays outside of PvP areas"
+	)
+	default boolean disableOutsidePvP()
+	{
+		return false;
+	}
 }
