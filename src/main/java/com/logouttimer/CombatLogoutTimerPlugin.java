@@ -19,7 +19,7 @@ import net.runelite.client.ui.overlay.infobox.InfoBoxManager;
 
 @Slf4j
 @PluginDescriptor(
-	name = "LogoutTimer"
+	name = "Combat Logout Timer"
 )
 public class CombatLogoutTimerPlugin extends Plugin
 {
