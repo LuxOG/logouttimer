@@ -11,11 +11,21 @@ public interface CombatLogoutTimerConfig extends Config
 
 
 	@ConfigItem(
-		keyName = "showCombatTimer",
+		keyName = "showLogoutTimer",
 		name = "Combat logout timer",
 		description = "Configures the display for the 10 second timer that prevents logout upon being hit in combat"
 	)
-	default boolean showCombatTimer()
+	default boolean showLogoutTimer()
+	{
+		return true;
+	}
+
+	@ConfigItem(
+		keyName = "showWorldHopTimer",
+		name = "Combat world hop timer",
+		description = "Configures the display for the 18 tick timer that prevents world hopping upon being hit in combat"
+	)
+	default boolean showWorldHopTimer()
 	{
 		return true;
 	}

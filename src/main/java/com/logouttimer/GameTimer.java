@@ -37,7 +37,8 @@ import static net.runelite.client.util.RSTimeUnit.GAME_TICKS;
 @Getter(AccessLevel.PACKAGE)
 enum GameTimer
 {
-	COMBAT_TIMER(SpriteID.MULTI_COMBAT_ZONE_CROSSED_SWORDS, GameTimerImageType.SPRITE, "Combat cooldown timer", 16, GAME_TICKS, true);
+	COMBAT_TIMER(SpriteID.MULTI_COMBAT_ZONE_CROSSED_SWORDS, GameTimerImageType.SPRITE, "Combat cooldown timer", 16, GAME_TICKS, true),
+	WORLD_HOP_COMBAT_TIMER(SpriteID.MULTI_COMBAT_ZONE_CROSSED_SWORDS, GameTimerImageType.SPRITE, "Combat cooldown timer", 18, GAME_TICKS, true);;
 
 	@Nullable
 	private final Duration duration;
