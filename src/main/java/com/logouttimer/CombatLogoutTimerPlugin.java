@@ -2,6 +2,7 @@ package com.logouttimer;
 
 import com.google.inject.Provides;
 import static com.logouttimer.GameTimer.COMBAT_TIMER;
+import static com.logouttimer.GameTimer.WORLD_HOP_COMBAT_TIMER;
 import java.time.Duration;
 import javax.inject.Inject;
 import lombok.extern.slf4j.Slf4j;
@@ -58,7 +59,7 @@ public class CombatLogoutTimerPlugin extends Plugin
 		{
 			return;
 		}
-		if (config.showCombatTimer())
+		if (config.showLogoutTimer())
 		{
 			boolean inWilderness = client.getVarbitValue(Varbits.IN_WILDERNESS) == 1;
 			boolean inPvp = client.getVarbitValue(Varbits.PVP_SPEC_ORB) == 1;
@@ -69,6 +70,19 @@ public class CombatLogoutTimerPlugin extends Plugin
 			else
 			{
 				createGameTimer(COMBAT_TIMER);
+			}
+		}
+		if (config.showWorldHopTimer())
+		{
+			boolean inWilderness = client.getVarbitValue(Varbits.IN_WILDERNESS) == 1;
+			boolean inPvp = client.getVarbitValue(Varbits.PVP_SPEC_ORB) == 1;
+			if (!inWilderness && !inPvp && config.disableOutsidePvP())
+			{
+				//Do nothing
+			}
+			else
+			{
+				createGameTimer(WORLD_HOP_COMBAT_TIMER);
 			}
 		}
 	}
